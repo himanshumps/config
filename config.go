@@ -95,12 +95,12 @@ func viperCfg() {
 	viper.SetDefault("https.cert", "/etc/certs/cert.crt")
 	viper.SetDefault("https.key", "/etc/certs/cert.key")
 
-	user, err := user.Current()
-	if err != nil {
-		log.Println("{viperCfg}", err)
-	}
+	//user, err := user.Current()
+	//if err != nil {
+	//	log.Println("{viperCfg}", err)
+	//}
 
-	viper.SetDefault("queries.location", filepath.Join(user.HomeDir, "queries"))
+	viper.SetDefault("queries.location", filepath.Join("/tmp", "queries"))
 }
 
 func getDefaultPrestConf(prestConf string) (cfg string) {
